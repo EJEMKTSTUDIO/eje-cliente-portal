@@ -137,7 +137,8 @@ export default function LoginPage() {
       </div>
 
       <div style={{
-        width: '420px',
+        width: '380px',
+        minWidth: '340px',
         background: '#fff',
         display: 'flex',
         flexDirection: 'column',
