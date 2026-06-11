@@ -38,8 +38,8 @@ export default function LoginPage() {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'space-between',
-      minHeight: '100vh',
+      justifyContent: 'flex-start',
+      gap: '32px',
       padding: '40px',
       background: '#F5F3EE',
       fontFamily: 'Inter, sans-serif',
