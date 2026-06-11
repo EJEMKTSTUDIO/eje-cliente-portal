@@ -437,23 +437,25 @@ export default function DashboardPage() {
             </span>
           </div>
           <nav style={{ display: 'flex', gap: '4px' }}>
-            <button style={{
-              background: '#fff5f0', border: 'none', borderRadius: '6px',
-              padding: '6px 12px', fontSize: '13px', fontWeight: '600',
-              color: '#DC5F1E', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
-            }}>
-              Dashboard
-            </button>
-            <button
-              onClick={() => navigate('/pagos')}
-              style={{
-                background: 'transparent', border: 'none', borderRadius: '6px',
-                padding: '6px 12px', fontSize: '13px', fontWeight: '400',
-                color: '#666', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
-              }}
-            >
-              Pagos
-            </button>
+            {[
+              { label: 'Dashboard', path: '/dashboard' },
+              { label: 'Pagos',     path: '/pagos' },
+              { label: 'Contrato',  path: '/contrato' },
+            ].map(({ label, path }) => (
+              <button
+                key={path}
+                onClick={() => navigate(path)}
+                style={{
+                  background: path === '/dashboard' ? '#fff5f0' : 'transparent',
+                  border: 'none', borderRadius: '6px', padding: '6px 12px',
+                  fontSize: '13px', fontWeight: path === '/dashboard' ? '600' : '400',
+                  color: path === '/dashboard' ? '#DC5F1E' : '#666',
+                  cursor: 'pointer', fontFamily: 'Inter, sans-serif',
+                }}
+              >
+                {label}
+              </button>
+            ))}
           </nav>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>

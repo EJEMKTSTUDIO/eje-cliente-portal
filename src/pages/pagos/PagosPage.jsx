@@ -102,10 +102,19 @@ export default function PagosPage() {
             </span>
           </div>
           <nav style={{ display: 'flex', gap: '4px' }}>
-            <button onClick={() => navigate('/dashboard')} style={navBtnStyle(false)}>
-              Dashboard
-            </button>
-            <button style={navBtnStyle(true)}>Pagos</button>
+            {[
+              { label: 'Dashboard', path: '/dashboard' },
+              { label: 'Pagos',     path: '/pagos' },
+              { label: 'Contrato',  path: '/contrato' },
+            ].map(({ label, path }) => (
+              <button
+                key={path}
+                onClick={() => navigate(path)}
+                style={navBtnStyle(path === '/pagos')}
+              >
+                {label}
+              </button>
+            ))}
           </nav>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>

@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginPage from './pages/auth/LoginPage';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import PagosPage from './pages/pagos/PagosPage';
+import ContratoPage from './pages/contrato/ContratoPage';
 
 function AppRoutes() {
   const { session, loading } = useAuth();
@@ -19,6 +20,7 @@ function AppRoutes() {
       <Route path="/login" element={!session ? <LoginPage /> : <Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={session ? <DashboardPage /> : <Navigate to="/login" replace />} />
       <Route path="/pagos" element={session ? <PagosPage /> : <Navigate to="/login" replace />} />
+      <Route path="/contrato" element={session ? <ContratoPage /> : <Navigate to="/login" replace />} />
       <Route path="*" element={<Navigate to={session ? "/dashboard" : "/login"} replace />} />
     </Routes>
   );
