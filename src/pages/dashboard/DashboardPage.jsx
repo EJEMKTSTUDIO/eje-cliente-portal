@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -135,6 +136,7 @@ const QUARTER_LABELS = {
 
 export default function DashboardPage() {
   const { session } = useAuth();
+  const navigate = useNavigate();
   const { client, records, loading, error } = useClientData();
 
   // Splash: show once per session
@@ -409,29 +411,50 @@ export default function DashboardPage() {
           zIndex: 100,
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div
-            style={{
-              width: '3px',
-              height: '20px',
-              background: '#DC5F1E',
-              borderRadius: '2px',
-            }}
-          />
-          <span style={{ fontWeight: '700', fontSize: '16px', color: '#1a1a1a' }}>
-            EJE
-          </span>
-          <span
-            style={{
-              fontSize: '11px',
-              color: '#999',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              marginLeft: '4px',
-            }}
-          >
-            Portal
-          </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div
+              style={{
+                width: '3px',
+                height: '20px',
+                background: '#DC5F1E',
+                borderRadius: '2px',
+              }}
+            />
+            <span style={{ fontWeight: '700', fontSize: '16px', color: '#1a1a1a' }}>
+              EJE
+            </span>
+            <span
+              style={{
+                fontSize: '11px',
+                color: '#999',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginLeft: '4px',
+              }}
+            >
+              Portal
+            </span>
+          </div>
+          <nav style={{ display: 'flex', gap: '4px' }}>
+            <button style={{
+              background: '#fff5f0', border: 'none', borderRadius: '6px',
+              padding: '6px 12px', fontSize: '13px', fontWeight: '600',
+              color: '#DC5F1E', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
+            }}>
+              Dashboard
+            </button>
+            <button
+              onClick={() => navigate('/pagos')}
+              style={{
+                background: 'transparent', border: 'none', borderRadius: '6px',
+                padding: '6px 12px', fontSize: '13px', fontWeight: '400',
+                color: '#666', cursor: 'pointer', fontFamily: 'Inter, sans-serif',
+              }}
+            >
+              Pagos
+            </button>
+          </nav>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <span style={{ fontSize: '13px', color: '#666' }}>
