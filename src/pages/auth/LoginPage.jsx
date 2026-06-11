@@ -118,19 +118,19 @@ export default function LoginPage() {
                 background: '#fff',
                 border: '1px solid #e8e6e0',
                 borderRadius: '12px',
-                padding: '12px 16px',
+                padding: '16px 14px',
               }}>
-                <div style={{ fontSize: '20px', fontWeight: '700', color: '#1a1a1a' }}>{m.valor}</div>
+                <div style={{ fontSize: '28px', fontWeight: '800', color: '#1a1a1a' }}>{m.valor}</div>
                 <div style={{ fontSize: '10px', fontWeight: '600', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#DC5F1E' }}>{m.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ overflow: 'hidden', borderTop: '1px solid #e8e6e0', paddingTop: '16px', marginTop: '32px' }}>
+        <div style={{ overflow: 'hidden', borderTop: '1px solid #e8e6e0', paddingTop: '14px', marginTop: '32px' }}>
           <div style={{ display: 'flex', gap: '48px', animation: 'ticker 20s linear infinite', whiteSpace: 'nowrap' }}>
             {clientes.map((c, i) => (
-              <span key={i} style={{ fontSize: '11px', color: '#999', letterSpacing: '0.06em' }}>{c}</span>
+              <span key={i} style={{ fontSize: '14px', color: '#999', letterSpacing: '0.06em' }}>{c}</span>
             ))}
           </div>
         </div>
