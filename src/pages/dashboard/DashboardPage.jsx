@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Chart as ChartJS,
+  BarController,
+  LineController,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -16,7 +18,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useClientData } from '../../hooks/useClientData';
 import SplashScreen from './SplashScreen';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Tooltip, Legend);
+ChartJS.register(BarController, LineController, CategoryScale, LinearScale, BarElement, LineElement, PointElement, Tooltip, Legend);
 
 // ─── Formatters ────────────────────────────────────────────────────────────
 
