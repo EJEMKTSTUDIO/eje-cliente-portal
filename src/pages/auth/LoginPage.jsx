@@ -38,8 +38,8 @@ export default function LoginPage() {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'flex-start',
-      gap: '32px',
+      justifyContent: 'space-between',
+      minHeight: '100vh',
       padding: '40px',
       background: '#F5F3EE',
       fontFamily: 'Inter, sans-serif',
@@ -224,9 +224,9 @@ export default function LoginPage() {
               background: '#fff',
               border: '1px solid #ebe8e2',
               borderRadius: '12px',
-              padding: '14px',
+              padding: '16px 14px',
             }}>
-              <div style={{ fontSize: '26px', fontWeight: '800', color: '#1a1a1a' }}>{m.valor}</div>
+              <div style={{ fontSize: '24px', fontWeight: '800', color: '#1a1a1a' }}>{m.valor}</div>
               <div style={{ fontSize: '9px', fontWeight: '600', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#DC5F1E', marginTop: '2px' }}>{m.label}</div>
             </div>
           ))}
