@@ -91,10 +91,10 @@ export default function LoginPage() {
           </div>
 
           <h1 style={{
-            fontSize: '56px',
+            fontSize: '72px',
             fontWeight: '800',
             lineHeight: 1.05,
-            letterSpacing: '-2px',
+            letterSpacing: '-3px',
             color: '#1a1a1a',
             margin: '0 0 24px 0',
           }}>
